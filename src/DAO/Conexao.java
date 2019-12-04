@@ -9,7 +9,7 @@ public class Conexao {
     public static Connection AbrirConexao(){
         Connection con = null;
         try {
-            Class.forName("com.mysqk.jdbc.Driver");
+            Class.forName("com.mysql.jdbc.Driver");
             String url = "jdbc:mysql://localhost/locadora";
             con = DriverManager.getConnection(url, "root", "");
         } catch (Exception e){
