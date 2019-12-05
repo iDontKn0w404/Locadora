@@ -12,7 +12,7 @@ public class ClienteDAO extends ExecuteSQL{
     public String Inserir_Cliente(Cliente a) {
         String sql = "insert into cliente values(0,?,?,?,?,?,?,?,?,?,?)";
         try {
-            PreparedStatement ps = getCon().prepareStatement (sql);
+            PreparedStatement ps = getCon().prepareStatement(sql);
             
             ps.setString(1, a.getNome());
             ps.setString(2, a.getNascimento());
