@@ -337,7 +337,7 @@ public class CadastrarCliente extends javax.swing.JFrame {
             a.setCPF(cpf);
             a.setRG(rg);
             
-            JOptionPane.showMessageDialog(null, a.getNome());
+//            JOptionPane.showMessageDialog(null, a.getNome());
             sql.Inserir_Cliente(a);
             Conexao.FecharConexao(con);
             
