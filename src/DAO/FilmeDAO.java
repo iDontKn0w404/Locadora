@@ -21,7 +21,7 @@ public class FilmeDAO extends ExecuteSQL{
             ps.setString(3, a.getDuracao());
             ps.setInt(4, a.getCod_categoria());
             ps.setInt(5, a.getCod_classificacao());
-            ps.setString(7, a.getCapa());
+            ps.setString(6, a.getCapa());
             
             if (ps.executeUpdate() > 0) {
                 return "Inserido com sucesso.";
