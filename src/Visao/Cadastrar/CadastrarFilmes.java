@@ -62,7 +62,7 @@ public class CadastrarFilmes extends javax.swing.JFrame {
         ClassificacaoDAO bd = new ClassificacaoDAO(con);
         List<Classificacao> lista = new ArrayList<>();
         lista = bd.ListarComboClassificacao();
-        JCB_Classificacao.addItem(" - ");
+        JCB_Classificacao.addItem("");
 
         for (Classificacao tab : lista) {
 
@@ -136,7 +136,7 @@ public class CadastrarFilmes extends javax.swing.JFrame {
 
         jLabel9.setText("Duração:");
 
-        jButton1.setText("OK");
+        jButton1.setText("Buscar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -291,23 +291,51 @@ public class CadastrarFilmes extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void JCB_ClassificacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCB_ClassificacaoActionPerformed
+      
+        Connection con = Conexao.AbrirConexao();
+        ClassificacaoDAO sql = new ClassificacaoDAO(con);
+        List<Classificacao> lista = new ArrayList<>();
+        String nome = JCB_Classificacao.getSelectedItem().toString();
+        
+        lista = sql.ConsultaCodigoClassificacao(nome);
+        
+        for (Classificacao b : lista) {
+            int a = b.getCodigo();
+            jTF_Class.setText("" + a);
+        }
+        Conexao.FecharConexao(con);  
+
         // TODO add your handling code here:
     }//GEN-LAST:event_JCB_ClassificacaoActionPerformed
 
     private void JCB_CategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCB_CategoriaActionPerformed
-        // TODO add your handling code here:
+        
+        Connection con = Conexao.AbrirConexao();
+        CategoriaDAO sql = new CategoriaDAO(con);
+        List<Categoria> lista = new ArrayList<>();
+        String nome = JCB_Categoria.getSelectedItem().toString();
+        
+        lista = sql.ConsultaCodigoCategoria(nome);
+        
+        for (Categoria b : lista) {
+            int a = b.getCodigo();
+            cjTF_Categoria.setText("" + a);
+        }
+        Conexao.FecharConexao(con);
+
+                // TODO add your handling code here:
     }//GEN-LAST:event_JCB_CategoriaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     try {
     JFileChooser foto = new JFileChooser();
-    foto.setCurrentDirectory(new File("/C:/Users/melal/Documents/Locadora/Pictures"));
+    foto.setCurrentDirectory(new File("/C:/Users/Will/Documents/NetBeansProjects/Locadora/src/imagens"));
     foto.setDialogTitle("Carregar capa");
     foto.showOpenDialog(this);
     String a = ""+foto.getSelectedFile().getName();
     jTF_Capa.setText(a);
     lb_Capa.setIcon(new ImageIcon
-            ("/C:/Users/melal/Documents/Locadora/Pictures/"+ jTF_Capa.getText() + "/"));
+            ("/C:/Users/Will/Documents/NetBeansProjects/Locadora/src/imagens/"+ jTF_Capa.getText() + "/"));
     
 } catch (Exception e) {
     JOptionPane.showMessageDialog(null, "Não foi possivel carregar a capa");
