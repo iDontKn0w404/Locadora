@@ -147,9 +147,19 @@ public class Menu extends javax.swing.JFrame {
         jMenu2.add(jMenuItem7);
 
         jMenuItem8.setText("Filme");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem8);
 
         jMenuItem20.setText("Funcionário");
+        jMenuItem20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem20ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem20);
 
         jMenuItem21.setText("DVD");
@@ -173,12 +183,27 @@ public class Menu extends javax.swing.JFrame {
         jMenu3.add(jMenuItem9);
 
         jMenuItem10.setText("Cliente");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem10);
 
         jMenuItem11.setText("Classificação");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem11);
 
         jMenuItem12.setText("Filme");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem12);
 
         jMenuItem19.setText("Funcionário");
@@ -190,6 +215,11 @@ public class Menu extends javax.swing.JFrame {
         jMenu3.add(jMenuItem19);
 
         jMenuItem22.setText("DVD");
+        jMenuItem22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem22ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem22);
 
         jMenuBar1.add(jMenu3);
@@ -205,6 +235,11 @@ public class Menu extends javax.swing.JFrame {
         jMenu4.add(jMenuItem13);
 
         jMenuItem14.setText("Cliente");
+        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem14ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem14);
 
         jMenuItem15.setText("Classificação");
@@ -216,6 +251,11 @@ public class Menu extends javax.swing.JFrame {
         jMenu4.add(jMenuItem15);
 
         jMenuItem16.setText("Filme");
+        jMenuItem16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem16ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem16);
 
         jMenuItem23.setText("Funcionário");
@@ -265,31 +305,31 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem21ActionPerformed
-        // TODO add your handling code here:
+    new AlterarDVD().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem21ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-        // TODO add your handling code here:
+    new ExcluirCategoria().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jMenuItem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem19ActionPerformed
-        // TODO add your handling code here:
+    new ExcluirFuncionario().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem19ActionPerformed
 
     private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
-        // TODO add your handling code here:
+    new ConsultarCategoria().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem13ActionPerformed
 
     private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
-        // TODO add your handling code here:
+    new ConsultarClassificacao().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem15ActionPerformed
 
     private void jMenuItem23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem23ActionPerformed
-        // TODO add your handling code here:
+    new ConsultarFuncionario().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem23ActionPerformed
 
     private void jMenuItem24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem24ActionPerformed
-        // TODO add your handling code here:
+    new ConsultarDVD().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem24ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
@@ -315,6 +355,38 @@ public class Menu extends javax.swing.JFrame {
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
     new AlterarClassificacao().setVisible(true);
     }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+    new AlterarFilme().setVisible(true);
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem20ActionPerformed
+    new AlterarFuncionario().setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem20ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+    new ExcluirCliente().setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+    new ExcluirClassificacao().setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+    new ExcluirFilme().setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
+
+    private void jMenuItem22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem22ActionPerformed
+    new ExcluirDVD().setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem22ActionPerformed
+
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+    new ConsultarCliente().setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem14ActionPerformed
+
+    private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
+    new ConsultarFilme().setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem16ActionPerformed
 
     /**
      * @param args the command line arguments
