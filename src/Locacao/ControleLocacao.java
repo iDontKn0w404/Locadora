@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package Locacao;
-
+ import java.sql.*;
+//import Modelo.DVD;
 /**
  *
  * @author Will
@@ -17,7 +18,42 @@ public class ControleLocacao extends javax.swing.JFrame {
     public ControleLocacao() {
         initComponents();
     }
-
+    
+    public boolean Testar_Situacao(int cod) {
+        boolean teste = false;
+        try{
+            String sql = "select iddvd from dvd where iddvd =" + cod + ""
+                    + " and situacao = 'Disponivel'";
+            PreparedStatement ps = getCon().preparedStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if (rs != null) {
+                while (rs.next()) {
+                    teste = true;
+                }
+            }
+        } catch (SQLException ex) {
+        }
+        return teste;
+    }
+    
+    public boolean Testar_DVD(int cod){
+        boolean teste = false;
+        try{
+            String sql = "select iddvd from dvd where iddvd =" + cod + "";
+            PreparedStatement ps = getCon().preparedStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if (rs != null) {
+                while (rs.next()) {
+                    teste = true;
+                }
+            }
+        } catch (SQLException ex) {
+        }
+        return teste;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,7 +70,7 @@ public class ControleLocacao extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btOK = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
@@ -79,7 +115,12 @@ public class ControleLocacao extends javax.swing.JFrame {
 
         jLabel2.setText("Código do DVD:");
 
-        jButton1.setText("OK");
+        btOK.setText("OK");
+        btOK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btOKActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Horas:");
 
@@ -119,7 +160,7 @@ public class ControleLocacao extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1)
+                                .addComponent(btOK)
                                 .addGap(145, 145, 145)
                                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(33, 33, 33)
@@ -184,7 +225,7 @@ public class ControleLocacao extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
+                    .addComponent(btOK)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -338,6 +379,10 @@ public class ControleLocacao extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btOKActionPerformed
+//        String pesquisa = jTF_CodDVD.getText();
+    }//GEN-LAST:event_btOKActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -374,7 +419,7 @@ public class ControleLocacao extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btOK;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;

@@ -14,7 +14,7 @@ public class DVDDAO extends ExecuteSQL{
     public String Inserir_DVD(DVD a) {
         String sql = "insert into dvd values(0,?,?,?,?)";
         try {
-            PreparedStatement ps = getCon().prepareStatement (sql);
+            PreparedStatement ps = getCon().prepareStatement(sql);
             
             ps.setInt(1, a.getCod_filme());
             ps.setString(2, a.getSituacao());
