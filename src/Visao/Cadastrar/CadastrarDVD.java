@@ -254,7 +254,7 @@ public class CadastrarDVD extends javax.swing.JFrame {
             a.setPreco(prc);
              
             
-//            JOptionPane.showMessageDialog(null, a.getNome());
+//            JOptionPane.showMessageDialog(null, a.getSituacao());
             sql.Inserir_DVD(a);
             Conexao.FecharConexao(con);
             
@@ -346,14 +346,14 @@ public class CadastrarDVD extends javax.swing.JFrame {
 
 //private void AtualizaCombo() {
 //        Connection con = Conexao.AbrirConexao();
-//        FilmeDAO sql = new FilmeDAO(con);
-//        List<Filme> lista = new ArrayList<>();
-//        lista = sql.ListarComboFilme();
-//        jCB_Filme.addItem("");
+//        DVDDAO sql = new DVDDAO(con);
+//        List<DVD> lista = new ArrayList<>();
+//        lista = sql.ListarComboDVD();
+//        JCB_Filme.addItem("");
 //
-//        for (Filme b : lista) {
+//        for (DVD b : lista) {
 //
-//            jCB_Filme.addItem(b.getNome());
+//            JCB_Filme.addItem(Integer.toString(b.getCod_filme()));
 //        }
 //        Conexao.FecharConexao(con);
 //    }
