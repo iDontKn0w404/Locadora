@@ -24,10 +24,10 @@ public class CadastrarFilmes extends javax.swing.JFrame {
     public CadastrarFilmes() {
         initComponents();
         setLocationRelativeTo(this);
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         ComboCategoria();
         ComboClassificacao();
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
     
     public void ComboCategoria(){
@@ -287,7 +287,7 @@ public class CadastrarFilmes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+    this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void JCB_ClassificacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCB_ClassificacaoActionPerformed

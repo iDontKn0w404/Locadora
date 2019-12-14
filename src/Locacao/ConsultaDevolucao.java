@@ -24,6 +24,8 @@ public class ConsultaDevolucao extends javax.swing.JFrame {
         initComponents();
         AtualizaCombo();
         AtualizaTable();
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setLocationRelativeTo(this);
     }
 
     /**

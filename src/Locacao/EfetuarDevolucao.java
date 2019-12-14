@@ -28,6 +28,8 @@ public class EfetuarDevolucao extends javax.swing.JFrame {
      */
     public EfetuarDevolucao() {
         initComponents();
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setLocationRelativeTo(this);
     }
 
     /**
@@ -111,6 +113,11 @@ public class EfetuarDevolucao extends javax.swing.JFrame {
         });
 
         jButton2.setText("Cancelar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -250,7 +257,6 @@ public class EfetuarDevolucao extends javax.swing.JFrame {
         jTF_Horas.setText("");
 
         InserirDados(cod);
-        
     }//GEN-LAST:event_jTF_CodActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -275,6 +281,10 @@ public class EfetuarDevolucao extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -28,6 +28,8 @@ public class ControleLocacao extends javax.swing.JFrame {
         AtualizaCombo();
         AtualizaTable();
         AtualizaDate();
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setLocationRelativeTo(this);
     }
     
 
@@ -132,6 +134,11 @@ public class ControleLocacao extends javax.swing.JFrame {
         });
 
         jButton5.setText("Cancelar");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jLabel13.setText("Código:");
 
@@ -602,6 +609,10 @@ public class ControleLocacao extends javax.swing.JFrame {
         }
         Conexao.FecharConexao(con);
     }//GEN-LAST:event_btCodClActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments

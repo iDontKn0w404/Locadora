@@ -24,6 +24,8 @@ public class AlterarCliente extends javax.swing.JFrame {
      */
     public AlterarCliente() {
         initComponents();
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setLocationRelativeTo(this);
     }
 
     /**
@@ -87,6 +89,11 @@ public class AlterarCliente extends javax.swing.JFrame {
         jLabel3.setText("Codigo");
 
         jButton2.setText("Cancelar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -442,6 +449,10 @@ public class AlterarCliente extends javax.swing.JFrame {
             dispose();
         }
     }//GEN-LAST:event_btalterarActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

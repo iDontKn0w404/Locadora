@@ -20,6 +20,8 @@ public class CadastrarFuncionario extends javax.swing.JFrame {
      */
     public CadastrarFuncionario() {
         initComponents();
+        setLocationRelativeTo(this);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
 
     /**
@@ -78,6 +80,11 @@ public class CadastrarFuncionario extends javax.swing.JFrame {
         });
 
         jButton2.setText("Cancelar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Limpar");
 
@@ -172,6 +179,10 @@ public class CadastrarFuncionario extends javax.swing.JFrame {
             dispose();
         }
     }//GEN-LAST:event_btSalvarActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

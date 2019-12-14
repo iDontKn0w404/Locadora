@@ -24,9 +24,9 @@ public class CadastrarDVD extends javax.swing.JFrame {
     public CadastrarDVD() {
         initComponents();
         setLocationRelativeTo(this);
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setResizable(false);
         ComboFilme();
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }
         public void ComboFilme(){
         Connection con = Conexao.AbrirConexao();
@@ -287,7 +287,7 @@ public class CadastrarDVD extends javax.swing.JFrame {
     }//GEN-LAST:event_JCB_FilmeActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        this.dispose();
+    this.dispose();        this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**

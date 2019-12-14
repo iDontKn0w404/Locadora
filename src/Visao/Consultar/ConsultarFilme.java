@@ -27,6 +27,8 @@ public class ConsultarFilme extends javax.swing.JFrame {
         setTitle("Video Locadora");
         setSize(970, 380);
         AtualizaTable();
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setLocationRelativeTo(this);
     }
 
     /**

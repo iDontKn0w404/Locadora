@@ -24,9 +24,11 @@ public class ExcluirDVD extends javax.swing.JFrame {
      * Creates new form ExcluirDVD
      */
     public ExcluirDVD() {
+        setLocationRelativeTo(this);
         initComponents();        
         setTitle("Video Locadora");
         AtualizaCombo();
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
     }
 
@@ -49,6 +51,11 @@ public class ExcluirDVD extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButton1.setText("Cancelar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         btExcluir.setText("OK");
 
@@ -97,6 +104,10 @@ public class ExcluirDVD extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
