@@ -2,16 +2,16 @@ package Modelo;
 
 public class Listar {
     
-    static private int codddvd;
+    static private int coddvd;
     static private int codaluguel;
     static private int codcliente;
 
-    public static int getCodddvd() {
-        return codddvd;
+    public static int getCoddvd() {
+        return coddvd;
     }
 
-    public static void setCodddvd(int codddvd) {
-        Listar.codddvd = codddvd;
+    public static void setCoddvd(int codddvd) {
+        Listar.coddvd = codddvd;
     }
 
     public static int getCodaluguel() {

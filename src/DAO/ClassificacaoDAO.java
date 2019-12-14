@@ -231,8 +231,8 @@ public class ClassificacaoDAO extends ExecuteSQL{
     }
     public List<Classificacao> ListarPrecoClassificacao(int codigo) {
         
-        String sql = "select preco from classificacao where idclassificacao = '" + codigo + "'";
-        List<Classificacao> lista = new ArrayList<>();
+        String sql = "select Preco from classificacao where idclassificacao = '" + codigo + "'";
+        List<Classificacao> listaCLA = new ArrayList<>();
         try {
             PreparedStatement ps = getCon().prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
@@ -241,10 +241,11 @@ public class ClassificacaoDAO extends ExecuteSQL{
                 while (rs.next()) {
                     
                     Classificacao a = new Classificacao();
-                    a.setCodigo(rs.getInt(1));
-                    lista.add(a);
+                    a.setPreco(rs.getInt(1));
+                    
+                    listaCLA.add(a);
                 }
-                return lista;
+                return listaCLA;
             } else {
                 return null;
             }
