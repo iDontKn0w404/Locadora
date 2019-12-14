@@ -147,7 +147,7 @@ public class ClassificacaoDAO extends ExecuteSQL{
             return null;
         }
     }
-    public String Alterar_Cliente(Classificacao a) {
+    public String Alterar_Classificacao(Classificacao a) {
         String sql = "update classificacao set nome = ? ,preco = ? where idclassificacao = ? ";
         try {
             PreparedStatement ps = getCon().prepareStatement(sql);
@@ -211,6 +211,8 @@ public class ClassificacaoDAO extends ExecuteSQL{
             return null;
         }
     }
+    
+    
     public String Excluir_Classificacao(Classificacao a) {
         String sql = "delete from classificacao where idclassificacao = ? and nome = ?";
         
@@ -225,6 +227,30 @@ public class ClassificacaoDAO extends ExecuteSQL{
             }
         } catch (SQLException e) {
             return e.getMessage();
+        }
+    }
+    public List<Classificacao> ListarPrecoClassificacao(int codigo) {
+        
+        String sql = "select preco from classificacao where idclassificacao = '" + codigo + "'";
+        List<Classificacao> lista = new ArrayList<>();
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if (rs != null) {
+                while (rs.next()) {
+                    
+                    Classificacao a = new Classificacao();
+                    a.setCodigo(rs.getInt(1));
+                    lista.add(a);
+                }
+                return lista;
+            } else {
+                return null;
+            }
+            
+        } catch (Exception e) {
+            return null;
         }
     }
     

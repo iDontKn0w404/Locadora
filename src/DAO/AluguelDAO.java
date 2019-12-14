@@ -2,6 +2,9 @@ package DAO;
 
 import Modelo.Aluguel;
 import java.sql.*;
+import DAO.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AluguelDAO extends ExecuteSQL{
     
@@ -30,4 +33,39 @@ public class AluguelDAO extends ExecuteSQL{
         }
     }
     
+    
+    public List<Aluguel> ListarAluguel() {
+        String sql = "select idaluguel,iddvd,idcliente,hora_aluguel,data_aluguel,data_devolucao from aluguel";
+        List<Aluguel> lista = new ArrayList();
+        try{
+            PreparedStatement ps = getCon().prepareStatement (sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if (rs != null) {
+                while (rs.next()) {
+                    Aluguel a = new Aluguel();
+                    a.setCod(rs.getInt(1));
+                    a.setCoddvd(rs.getInt(2));
+                    a.setCodcliente(rs.getInt(3));
+                    a.setHorario(rs.getString(4));
+                    a.setData_aluguel(rs.getString(5));
+                    a.setData_devolucao(rs.getString(6));
+                    
+                    lista.add(a);
+                }
+                return lista;
+            } else {
+                return null;
+            }
+        } catch (SQLException e) {
+            return null;
+        }
+    }
+    
+
+    public void Atualizar_Situacao(String situacao, int coddvd) {
+        
+    String sql = "update dvd set situacao = " + situacao + " where iddvd = " + coddvd + "";
+    
+    }
 }

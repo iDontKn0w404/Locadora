@@ -234,7 +234,7 @@ public class AlterarClassificacao extends javax.swing.JFrame {
             a.setNome(nome);
             a.setPreco(prec);
             
-            sql.Alterar_Cliente(a);
+            sql.Alterar_Classificacao(a);
             Conexao.FecharConexao(con);
             
             jTF_Codigo.setText("");
