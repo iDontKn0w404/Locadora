@@ -302,6 +302,11 @@ public class ControleLocacao extends javax.swing.JFrame {
                 "Código", "DVD", "Cliente", "Horário", "Locação", "Devolução"
             }
         ));
+        jTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -479,6 +484,23 @@ public class ControleLocacao extends javax.swing.JFrame {
         }
         Conexao.FecharConexao(con);
     }//GEN-LAST:event_jCB_ClienteActionPerformed
+
+    private void jTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMouseClicked
+       Integer linha =  jTable.getSelectedRow();
+       Integer idalugel = (Integer) jTable. getValueAt (linha, 0);
+       Integer idcliente = (Integer) jTable.getValueAt (linha, 1);
+       Integer iddvd = (Integer) jTable. getValueAt (linha, 2);
+       Listar a = new Listar ();
+       a.setCoddvd (iddvd);
+       a. setCodaluguel (idcliente);
+       a. setCodclienten(idcliente);
+       new EfetuarDevolucao (). setVisible(true);
+       
+    
+      
+       
+       
+    }//GEN-LAST:event_jTableMouseClicked
 
     /**
      * @param args the command line arguments
