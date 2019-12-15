@@ -152,7 +152,6 @@ public class ExcluirFilme extends javax.swing.JFrame {
                 a.setCodigo(cod);
                 sql.Excluir_Filme(a);
                 Conexao.FecharConexao(con);
-                dispose();
             }
         }
     }//GEN-LAST:event_btExcluirActionPerformed

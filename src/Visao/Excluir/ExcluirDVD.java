@@ -58,12 +58,23 @@ public class ExcluirDVD extends javax.swing.JFrame {
         });
 
         btExcluir.setText("OK");
+        btExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btExcluirActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Excluir DVD");
 
         jLabel1.setText("Nome:");
+
+        jCB_DVD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCB_DVDActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -108,6 +119,39 @@ public class ExcluirDVD extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirActionPerformed
+        String coddvd = jTF_DVD.getText();
+        
+        Connection con = Conexao.AbrirConexao();
+        DVDDAO sql = new DVDDAO(con);
+        DVD a = new DVD();
+        if (coddvd.equals("")) {
+            JOptionPane.showMessageDialog(null, "Nenhum Nome Selecionado",
+                    "Video Locadora", JOptionPane.WARNING_MESSAGE);
+        } else {
+        int b = JOptionPane.showConfirmDialog(null, "Deseja realmente Excluir"
+                + " \n ( " + coddvd + " ) ", "Video Locadora",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (b == 0) {
+                int cod = Integer.parseInt(coddvd);
+                a.setCodigo(cod);
+                sql.Excluir_DVD(a);
+                Conexao.FecharConexao(con);
+            }
+        }
+    }//GEN-LAST:event_btExcluirActionPerformed
+
+    private void jCB_DVDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCB_DVDActionPerformed
+        Connection con = Conexao.AbrirConexao();
+        DVDDAO sql = new DVDDAO(con);
+        List<DVD> lista = new ArrayList<>();
+        String nome = jCB_DVD.getSelectedItem().toString();
+       
+            jTF_DVD.setText("" + nome);
+        
+        Conexao.FecharConexao(con); 
+    }//GEN-LAST:event_jCB_DVDActionPerformed
 
     /**
      * @param args the command line arguments

@@ -182,7 +182,7 @@ public class DVDDAO extends ExecuteSQL{
     }
     public List<DVD> ListarComboDVD() {
         
-        String sql = "select idfilme from dvd order by nome ";
+        String sql = "select iddvd from dvd order by iddvd ";
         List<DVD> lista = new ArrayList<>();
         try {
             PreparedStatement ps = getCon().prepareStatement(sql);
@@ -192,7 +192,7 @@ public class DVDDAO extends ExecuteSQL{
                 while (rs.next()) {
                     
                     DVD a = new DVD();
-                    a.setCod_filme(rs.getInt(1));
+                    a.setCodigo(rs.getInt(1));
                     lista.add(a);
                 }
                 return lista;
@@ -229,12 +229,11 @@ public class DVDDAO extends ExecuteSQL{
         }
     }
     public String Excluir_DVD(DVD a) {
-        String sql = "delete from dvd where iddvd = ? and idfilme = ?";
+        String sql = "delete from dvd where iddvd = ?";
         
         try {
             PreparedStatement ps = getCon().prepareStatement(sql);
             ps.setInt(1, a.getCodigo());
-            ps.setInt(2, a.getCod_filme());
             if (ps.executeUpdate() > 0) {
                 return "Excluido com sucesso.";
             } else {
@@ -334,5 +333,6 @@ public class DVDDAO extends ExecuteSQL{
         }
     
     }
+
 
 }

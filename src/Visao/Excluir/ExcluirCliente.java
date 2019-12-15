@@ -155,7 +155,6 @@ public class ExcluirCliente extends javax.swing.JFrame {
                 a.setCodigo(cod);
                 sql.Excluir_Cliente(a);
                 Conexao.FecharConexao(con);
-                dispose();
             }
         }
     }//GEN-LAST:event_btExcluirActionPerformed
