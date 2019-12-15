@@ -263,9 +263,12 @@ public class EfetuarDevolucao extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String codigo = jTF_Cod.getText();
         String nome = jTF_Filme.getText();
+        String codigodvd = jTF_CodD.getText();
         Connection con = Conexao.AbrirConexao();
         AluguelDAO sql = new AluguelDAO(con);
         Aluguel a = new Aluguel();
+        DVDDAO dvd = new DVDDAO(con);
+        DVD c = new DVD();
         if (codigo.equals("")) {
             JOptionPane.showMessageDialog(null, "Nenhum Nome Selecionado",
                     "Video Locadora", JOptionPane.WARNING_MESSAGE);
@@ -275,7 +278,12 @@ public class EfetuarDevolucao extends javax.swing.JFrame {
                 JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (b == 0) {
                 int cod = Integer.parseInt(codigo);
+                int coddvd = Integer.parseInt(codigodvd);
                 a.setCod(cod);
+                String situacao = "Disponivel";
+                c.setCodigo(coddvd);
+                c.setSituacao(situacao);
+                dvd.Atualizar_Situacao(c);
                 sql.Excluir_Aluguel(a);
                 Conexao.FecharConexao(con);
                 dispose();

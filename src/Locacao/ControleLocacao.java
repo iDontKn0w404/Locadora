@@ -472,6 +472,8 @@ public class ControleLocacao extends javax.swing.JFrame {
             AluguelDAO sql = new AluguelDAO(con);
             int coddvd = Integer.parseInt(dvd);
             int codcli = Integer.parseInt(cliente);
+            DVDDAO dvdd = new DVDDAO(con);
+            DVD c = new DVD();
             Aluguel a = new Aluguel();
             a.setCoddvd(coddvd);
             a.setCodcliente(codcli);
@@ -480,7 +482,9 @@ public class ControleLocacao extends javax.swing.JFrame {
             a.setData_devolucao(devolucao);
             sql.Inserir_Aluguel(a);
             String situacao = "Emprestado";
-            sql.Atualizar_Situacao(situacao, coddvd);
+            c.setSituacao(situacao);
+            c.setCodigo(coddvd);
+            dvdd.Atualizar_Situacao(c);
             Conexao.FecharConexao(con);
             
             JOptionPane.showMessageDialog(null, "Cadastro Realizado com Sucesso",

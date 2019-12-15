@@ -64,11 +64,8 @@ public class AluguelDAO extends ExecuteSQL{
     }
     
 
-    public void Atualizar_Situacao(String situacao, int coddvd) {
-        
-    String sql = "update dvd set situacao = " + situacao + " where iddvd = " + coddvd + "";
+       
     
-    }
     
     public List<Aluguel> Pesquisar_Aluguel_Cod(int cod) {
     String sql = "select idaluguel, iddvd, idcliente, hora_aluguel, data_aluguel, data_devolucao "
