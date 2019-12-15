@@ -489,7 +489,15 @@ public class ControleLocacao extends javax.swing.JFrame {
             
             JOptionPane.showMessageDialog(null, "Cadastro Realizado com Sucesso",
                     "Video Locadora", JOptionPane.INFORMATION_MESSAGE);
-            dispose();
+            
+                jTF_CodDVD.setText("");
+                jTF_Titulo.setText("");
+                jTF_Valor.setText("");
+                jTF_Categoria.setText("");
+                jTF_Classificacao.setText("");
+                jLbFoto.setIcon(new ImageIcon(""));
+                jTF_Codigo.setText("");
+                jTF_CodCliente.setText("");
         } 
     }//GEN-LAST:event_btCadastrarActionPerformed
 
