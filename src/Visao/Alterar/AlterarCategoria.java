@@ -226,7 +226,7 @@ public class AlterarCategoria extends javax.swing.JFrame {
             
             sql.Alterar_Categoria(a);
             Conexao.FecharConexao(con);
-            
+            jTF_Codigo.setText("");
             jTF_Nome.setText("");
             JOptionPane.showMessageDialog(null, "Alteração Realizada com Sucesso",
                     "Video Locadora", JOptionPane.INFORMATION_MESSAGE);
@@ -239,6 +239,7 @@ public class AlterarCategoria extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
     jTF_Nome.setText("");
+    jTF_Codigo.setText("");
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**

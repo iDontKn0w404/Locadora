@@ -58,7 +58,6 @@ public class AlterarCliente extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jTF_Telefone = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jTF_Email = new javax.swing.JTextField();
         jTF_Rua = new javax.swing.JTextField();
@@ -69,6 +68,7 @@ public class AlterarCliente extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jTF_Telefone = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -113,7 +113,7 @@ public class AlterarCliente extends javax.swing.JFrame {
         jLabel14.setText("CEP:");
 
         try {
-            jTF_RG.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####################")));
+            jTF_RG.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -147,12 +147,6 @@ public class AlterarCliente extends javax.swing.JFrame {
         jLabel11.setText("Rua:");
 
         jLabel12.setText("Email:");
-
-        jTF_Telefone.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTF_TelefoneActionPerformed(evt);
-            }
-        });
 
         jLabel6.setText("Data de Nascimento:");
 
@@ -194,6 +188,12 @@ public class AlterarCliente extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(26, Short.MAX_VALUE))
         );
+
+        try {
+            jTF_Telefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -257,9 +257,9 @@ public class AlterarCliente extends javax.swing.JFrame {
                                                     .addComponent(jTF_CEP, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel9)
-                                        .addGap(5, 5, 5)
-                                        .addComponent(jTF_Telefone, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(44, 44, 44)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jTF_Telefone, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(46, 46, 46)
                                         .addComponent(jLabel6)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jTF_Nascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -319,8 +319,9 @@ public class AlterarCliente extends javax.swing.JFrame {
                         .addComponent(jTF_Nascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(3, 3, 3)
-                        .addComponent(jLabel9))
-                    .addComponent(jTF_Telefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(jTF_Telefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -345,7 +346,7 @@ public class AlterarCliente extends javax.swing.JFrame {
                         .addGap(3, 3, 3)
                         .addComponent(jLabel12))
                     .addComponent(jTF_Email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(btalterar)
@@ -359,10 +360,6 @@ public class AlterarCliente extends javax.swing.JFrame {
     private void jTF_NomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTF_NomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTF_NomeActionPerformed
-
-    private void jTF_TelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTF_TelefoneActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTF_TelefoneActionPerformed
 
     private void jTF_EmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTF_EmailActionPerformed
         // TODO add your handling code here:
@@ -440,6 +437,7 @@ public class AlterarCliente extends javax.swing.JFrame {
             sql.Alterar_Cliente(a);
             Conexao.FecharConexao(con);
             
+            jTF_Codigo.setText("");
             jTF_Nome.setText("");
             jTF_CEP.setText("");
             jTF_Numero.setText("");
@@ -460,7 +458,8 @@ public class AlterarCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-jTF_Nome.setText("");
+            jTF_Codigo.setText("");
+            jTF_Nome.setText("");
             jTF_CEP.setText("");
             jTF_Numero.setText("");
             jTF_Bairro.setText("");
@@ -538,7 +537,7 @@ jTF_Nome.setText("");
     private javax.swing.JTextField jTF_Numero;
     private javax.swing.JFormattedTextField jTF_RG;
     private javax.swing.JTextField jTF_Rua;
-    private javax.swing.JTextField jTF_Telefone;
+    private javax.swing.JFormattedTextField jTF_Telefone;
     private javax.swing.JTextField jTF_cod;
     // End of variables declaration//GEN-END:variables
 

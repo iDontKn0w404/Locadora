@@ -161,6 +161,7 @@ public class ExcluirCategoria extends javax.swing.JFrame {
                 a.setCodigo(cod);
                 sql.Excluir_Categoria(a);
                 Conexao.FecharConexao(con);
+                this.dispose();
             }
         }
     }//GEN-LAST:event_btExcluirActionPerformed

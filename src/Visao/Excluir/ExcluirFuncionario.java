@@ -151,6 +151,7 @@ public class ExcluirFuncionario extends javax.swing.JFrame {
                 a.setCod(cod);
                 sql.Excluir_Funcionario(a);
                 Conexao.FecharConexao(con);
+                this.dispose();
             }
         }
 

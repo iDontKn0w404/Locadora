@@ -459,6 +459,7 @@ public class AlterarFilme extends javax.swing.JFrame {
             sql.Alterar_Filme(a);
             Conexao.FecharConexao(con);
             
+            jTF_Codigo.setText("");
             jTF_Titulo.setText("");
             jTF_Ano.setText("");
             jTF_Duracao.setText("");
